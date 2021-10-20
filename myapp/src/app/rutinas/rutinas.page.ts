@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
- import { Router} from '@angular/router';
+import { Router} from '@angular/router';
 
- import{ HttpClient} from '@angular/common/http';
- import { map } from 'rxjs/operators';
+import{ HttpClient} from '@angular/common/http';
+import { map } from 'rxjs/operators';
+
 
 @Component({
-  selector: 'app-informate',
-  templateUrl: './informate.page.html',
-  styleUrls: ['./informate.page.scss'],
+  selector: 'app-rutinas',
+  templateUrl: './rutinas.page.html',
+  styleUrls: ['./rutinas.page.scss'],
 })
-export class InformatePage implements OnInit {
+export class RutinasPage implements OnInit {
 
   users: any = [];
 
@@ -31,7 +32,7 @@ export class InformatePage implements OnInit {
     }
     getUsers(){
       return this.http
-      .get("../../assets/files/informate.json")
+      .get("../../assets/files/rutinas.json")
       .pipe(
         map((res:any) =>{
           return res.data;

@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'motivate',
     loadChildren: () => import('./motivate/motivate.module').then( m => m.MotivatePageModule)
+  },
+  {
+    path: 'rutinas',
+    loadChildren: () => import('./rutinas/rutinas.module').then( m => m.RutinasPageModule)
   }
 ];
 
