@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
- import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 
- import{ HttpClient} from '@angular/common/http';
- import { map } from 'rxjs/operators';
-
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-motivate',
@@ -11,33 +10,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./motivate.page.scss'],
 })
 export class MotivatePage implements OnInit {
-
   users: any = [];
 
-  constructor(
-    private router: Router,
-    private http: HttpClient
-  ) { }
+  constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit() {
-    console.log("holaa");
-    this.getUsers().subscribe(res=>{
-      console.log("Res",res)
-      this.users= res;
-    })
+    console.log('holaa');
+    this.getUsers().subscribe((res) => {
+      console.log('Res', res);
+      this.users = res;
+    });
   }
 
-    goTogHome(){
-      this.router.navigate(['/home'])
-    }
-    getUsers(){
-      return this.http
-      .get("../../assets/files/motivate.json")
-      .pipe(
-        map((res:any) =>{
-          return res.data;
-        })
-      )
-    }
-  
+  goTogHome() {
+    this.router.navigate(['/home']);
+  }
+  getUsers() {
+    return this.http
+      .get('../../assets/files/motivate.json')
+      .pipe(map((res: any) => res.data));
+  }
 }

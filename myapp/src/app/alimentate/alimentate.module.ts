@@ -13,8 +13,8 @@ import { AlimentatePage } from './alimentate.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    AlimentatePageRoutingModule
+    AlimentatePageRoutingModule,
   ],
-  declarations: [AlimentatePage]
+  declarations: [AlimentatePage],
 })
 export class AlimentatePageModule {}
