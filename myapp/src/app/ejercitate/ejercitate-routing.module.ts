@@ -6,8 +6,8 @@ import { EjercitatePage } from './ejercitate.page';
 const routes: Routes = [
   {
     path: '',
-    component: EjercitatePage
-  }
+    component: EjercitatePage,
+  },
 ];
 
 @NgModule({

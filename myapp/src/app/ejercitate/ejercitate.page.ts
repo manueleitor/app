@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router} from '@angular/router';
+import { Router } from '@angular/router';
 
-import{ HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 @Component({
@@ -11,36 +11,24 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./ejercitate.page.scss'],
 })
 export class EjercitatePage implements OnInit {
-
   rutins: any[];
 
-
-  constructor(
-    private router: Router,
-    private http: HttpClient
-  ) { } 
+  constructor(private router: Router, private http: HttpClient) {}
 
   ngOnInit() {
-    console.log("holaa");
-    this.getrutins().subscribe(res=>{
-      console.log("Res",res)
-      this.rutins= res;
-    })
+    console.log('holaa');
+    this.getrutins().subscribe((res) => {
+      console.log('Res', res);
+      this.rutins = res;
+    });
   }
 
-    goTogHome(){
-      this.router.navigate(['/home'])
-    }
-    getrutins(){
-      return this.http
-      .get("../../assets/files/ejercitate.json")
-      .pipe(
-        map((res:any) =>{
-          return res.data;
-        })
-      )
-    }
+  goTogHome() {
+    this.router.navigate(['/home']);
   }
-    
-
-
+  getrutins() {
+    return this.http
+      .get('../../assets/files/ejercitate.json')
+      .pipe(map((res: any) => res.data));
+  }
+}

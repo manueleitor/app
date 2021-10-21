@@ -12,7 +12,6 @@ export class AppComponent {
     { title: 'Motivate', url: '/motivate', icon: 'bicycle' },
     { title: 'Alimentate', url: '/alimentate', icon: 'Water' },
     { title: 'Informate', url: '/informate', icon: 'paper-plane' },
-    
   ];
   constructor() {}
 }

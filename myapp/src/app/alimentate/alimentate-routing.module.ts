@@ -6,8 +6,8 @@ import { AlimentatePage } from './alimentate.page';
 const routes: Routes = [
   {
     path: '',
-    component: AlimentatePage
-  }
+    component: AlimentatePage,
+  },
 ];
 
 @NgModule({
